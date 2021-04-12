@@ -1,0 +1,20 @@
+.mark-winner{
+	position: absolute;
+	clip-path: polygon(0 10px,60px 0,60px 20px);
+	background: red;
+	width: 60px;
+	height: 20px;
+	top: 0;
+	transform: rotate(-90deg);
+	left: 270px;
+	z-index: 10;
+	box-shadow: 0 0 3px #33333399;
+}
+
+.concursantes {
+	position: relative;
+}
+
+#idcanvas {
+	transform: rotate(-90deg);
+}
