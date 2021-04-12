@@ -1,6 +1,6 @@
 const array_concursantes=
     [
-        1,2,3,4,5,6,7,8,9,10,11
+        1,2,3,4,5,6,7
     ];
 
 let canvas=document.getElementById("idcanvas");
@@ -49,7 +49,7 @@ function sortear(){
         movement=setInterval(function(){
             pos_ini+=10;
             canvas.style.transform='rotate('+pos_ini+'deg)';
-        },60);
+        },25);
         clic=1;
         document.getElementById("idestado").innerHTML="Detener";
     }else{
