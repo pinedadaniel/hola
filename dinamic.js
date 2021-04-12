@@ -41,6 +41,7 @@ for (var i = 0; i < array_concursantes.length; i++) {
 }
 
 let pos_ini= -90;
+const reverse = array_concursantes.reverse();
 let clic=0;
 let movement;
 function sortear(){
@@ -48,30 +49,21 @@ function sortear(){
         let canvas=document.getElementById("idcanvas");
         movement=setInterval(function(){
             pos_ini+=10;
+            if(pos_ini === 270) {
+                pos_ini = -90;
+            }
             canvas.style.transform='rotate('+pos_ini+'deg)';
-        },25);
+        },100);
         clic=1;
         document.getElementById("idestado").innerHTML="Detener";
     }else{
         clearInterval(movement);
         clic=0;
         document.getElementById("idestado").innerHTML="Sortear";
-        const  gradoFinal = pos_ini + 90;
+        const gradoFinal = pos_ini + 90;
         const gradoXOpcion = 360 / array_concursantes.length;
-        const residuo = gradoFinal % gradoXOpcion;
-        let opcionesRecorridas =  gradoFinal / gradoXOpcion ;
-        let posicionFinal = (array_concursantes.length - 1) - (Math.floor(opcionesRecorridas) % array_concursantes.length);
-        /* console.log(posicionFinal);
-         console.log('residuo', + residuo);
-         console.log(5 % 11)
-         console.log('grado final = ' + gradoFinal);
-         console.log('grado x opcion = ' + gradoXOpcion);
-         console.log('trigualos recorridos= ' + opcionesRecorridas);
-         console.log('OPCION FINAL = ', + Math.floor(opcionesRecorridas));
-         console.log('modulo =' + (Math.floor(opcionesRecorridas) % array_concursantes.length));
-         console.log('EL GANADOR ES = ' + array_concursantes[posicionFinal]); */
-        clear();
-        alert('EL GANADOR ES: ' + array_concursantes[posicionFinal]);
+        const posicion_final =  Math.floor(gradoFinal / gradoXOpcion);
+        alert(reverse[posicion_final]);
     }
 }
 
@@ -90,4 +82,5 @@ function random_color(){
 
 function clear() {
     pos_ini= -90;
+
 }
