@@ -1,9 +1,7 @@
 const array_concursantes=
-		[
-		//ARRAY DE OPCIONES
-
+    [
         1,2,3,4,5,6,7,8,9,10,11
-		];
+    ];
 
 let canvas=document.getElementById("idcanvas");
 let context=canvas.getContext("2d");
@@ -31,7 +29,6 @@ for (var i = 0; i < array_concursantes.length; i++) {
     context.lineTo(center,center);
     context.fillStyle =random_color();
     context.fill();
-
     context.save();
     context.translate(center, center);
     context.rotate(3*2*Math.PI/(5*array_concursantes.length)+i*2*Math.PI/array_concursantes.length);
@@ -63,19 +60,18 @@ function sortear(){
         const gradoXOpcion = 360 / array_concursantes.length;
         const residuo = gradoFinal % gradoXOpcion;
         let opcionesRecorridas =  gradoFinal / gradoXOpcion ;
-        const result = ((residuo * 100) / gradoXOpcion) /100;
         let posicionFinal = (array_concursantes.length - 1) - (Math.floor(opcionesRecorridas) % array_concursantes.length);
-        console.log(posicionFinal);
-        console.log('residuo', + residuo);
-        console.log(5 % 11)
-        console.log('grado final = ' + gradoFinal);
-        console.log('grado x opcion = ' + gradoXOpcion);
-        console.log('trigualos recorridos= ' + opcionesRecorridas);
-        console.log('result', + result);
-        console.log('opcionesRecorridas finales', + (opcionesRecorridas + result));
-        console.log('OPCION FINAL = ', + Math.floor(opcionesRecorridas));
-        console.log('modulo =' + (Math.floor(opcionesRecorridas) % array_concursantes.length));
-        console.log('EL GANADOR ES = ' + array_concursantes[posicionFinal])
+        /* console.log(posicionFinal);
+         console.log('residuo', + residuo);
+         console.log(5 % 11)
+         console.log('grado final = ' + gradoFinal);
+         console.log('grado x opcion = ' + gradoXOpcion);
+         console.log('trigualos recorridos= ' + opcionesRecorridas);
+         console.log('OPCION FINAL = ', + Math.floor(opcionesRecorridas));
+         console.log('modulo =' + (Math.floor(opcionesRecorridas) % array_concursantes.length));
+         console.log('EL GANADOR ES = ' + array_concursantes[posicionFinal]); */
+        clear();
+        alert('EL GANADOR ES: ' + array_concursantes[posicionFinal]);
     }
 }
 
@@ -89,4 +85,9 @@ function random_color(){
         i++;
     }
     return '#'+color;
+}
+
+
+function clear() {
+    pos_ini= -90;
 }
