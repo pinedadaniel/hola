@@ -9,7 +9,7 @@ let center=canvas.width/2;
 
 context.beginPath();
 context.moveTo(center,center);
-context.arc(center,center,center,0, 2*Math.PI);
+context.arc(center,center,center,0, 2* Math.PI);
 context.lineTo(center,center);
 context.fillStyle ='#33333333';
 context.fill();
@@ -53,7 +53,7 @@ function sortear(){
                 pos_ini = -90;
             }
             canvas.style.transform='rotate('+pos_ini+'deg)';
-        },100);
+        },25);
         clic=1;
         document.getElementById("idestado").innerHTML="Detener";
     }else{
